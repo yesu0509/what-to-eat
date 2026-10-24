@@ -32,11 +32,17 @@ def main():
 
     input("엔터를 누르면 메뉴를 추천해드려요: ")
 
+    retry_count = 0
+
     while True:
         print(f"오늘은 {recommend_menu()} 어때요?")
         answer = input("추천 메뉴를 바꿔볼까요? (y/n):")
         if answer.lower() != "y":
             print("맛있게 드세요!")
+            break
+        retry_count +=1
+        if retry_count == 15:
+            print ("아무거나 드세요...")
             break
 
 
